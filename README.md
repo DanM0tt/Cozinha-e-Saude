@@ -1,7 +1,7 @@
 # Cozinha_e_Saúde
 Projeto DS - 2025.2 - CIn
 
-Para que o programa funcione, clone o repositório localmente, crie um arquivo .env, crie a variável API_KEY e coloque a sua key da api do gemini.
+Para que o programa funcione, clone o repositório localmente, crie um arquivo .env, crie a variável API_KEY e coloque a sua key da api do Gemini.
 
 Ex.:
 >API_KEY = "sua key"

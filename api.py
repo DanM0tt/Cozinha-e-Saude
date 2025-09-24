@@ -10,17 +10,18 @@ class Receita(BaseModel):
     nome_receita: str
     ingredientes: list[str]
 
-client = genai.Client(api_key = "api_key")
+prompt = input("Quais ingredientes você possui para essa receita?")
+
+client = genai.Client(api_key = f"{api_key}")
 resposta = client.models.generate_content(
     model="gemini-2.5-flash",
-    contents="List a few popular cookie recipes, and include the amounts of ingredients.",
+    contents=f"Quero que você crie uma receita com os ingredientes que tenho disponível, sendo eles os seguintes {prompt}",
     config={
         "response_mime_type": "application/json",
         "response_schema": list[Receita],
     },
 )
 
-# Use instantiated objects.
 minhas_receitas: list[Receita] = resposta.parsed
 
 print()
