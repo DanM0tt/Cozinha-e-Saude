@@ -1,170 +1,200 @@
-/* ------------------------- */
-/* RESET GLOBAL              */
-/* ------------------------- */
+/* RESET */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  overflow-x: hidden; /* Evita scroll horizontal causado por margens/padding */
-  background-color: #FAF8F2; /* Fundo uniforme */
-}
-
-/* ------------------------- */
-/* RESET BÁSICO - Escopo local */
-/* ------------------------- */
-.nutricin-page * {
-  margin: 0;
-  padding: 0;
+  background-color: #FAF8F2;
+  font-family: Arial, sans-serif;
+  color: #333;
   box-sizing: border-box;
 }
 
-/* Corpo da página NutriCin */
-.nutricin-page {
-  width: 100vw; /* Garante 100% da largura da viewport */
-  max-width: 100%; /* Garante que não ultrapasse a largura da viewport */
-  font-family: Arial, sans-serif;
-  color: #333;
-  padding: 0; /* Remove padding lateral */
-  margin: 0; /* Remove margem */
-  min-height: 100vh; /* Altura total da tela */
+* {
+  box-sizing: inherit;
 }
 
-/* ------------------------- */
-/* BARRA SUPERIOR            */
-/* ------------------------- */
-.nutricin-page .top-bar {
-  background-color: #32CD32;
+/* =============================== */
+/* BARRA SUPERIOR  */
+/* =============================== */
+
+/* Área verde superior com título e subtítulo */
+.top-bar {
+  background-color: #61bb3e;
   color: white;
   text-align: center;
-  padding: 15px;
-  margin: 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px 10px;
 }
 
-.nutricin-page .top-bar h1 {
+/* Título "NutriCin" */
+.top-bar h1 {
   font-size: 24px;
+  margin: 0;
 }
 
-.nutricin-page .top-bar p {
+/* Subtítulo pequeno */
+.top-bar p {
   font-size: 13px;
+  margin: 5px 0 0;
 }
 
-/* ------------------------- */
-/* BOTÕES PRINCIPAIS         */
-/* ------------------------- */
-.nutricin-page .menu-buttons {
+/* =============================== */
+/* BOTÕES DE NAVEGAÇÃO PRINCIPAL  */
+/* =============================== */
+
+/* Contêiner dos botões fora do topo verde */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
   margin: 20px auto;
-  text-align: center;
 }
 
-.nutricin-page .menu-buttons button {
-  background-color: white;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  padding: 10px 15px;
-  margin: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.nutricin-page .menu-buttons button:hover {
-  background-color: #ffecec;
-}
-
-.nutricin-page .menu-buttons .green {
-  background-color: #32CD32;
-  color: white;
+/* Estilo base para todos os botões */
+.nav-buttons button {
   border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* ------------------------- */
-/* CAIXA "COMO FUNCIONA"     */
-/* ------------------------- */
-.nutricin-page .como-funciona {
+/* Efeito visual ao passar o mouse */
+.nav-buttons button:hover {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+/* Cores individuais dos botões */
+.green  { background-color: #3bd332; color: white; }
+.orange { background-color: #f7c15f; color: #3a2c00; }
+.blue   { background-color: #59a6ff; color: white; }
+.gray   { background-color: #e5e5e5; color: #333; }
+
+/* =============================== */
+/* SEÇÃO "COMO FUNCIONA"          */
+/* =============================== */
+
+/* Caixa com explicação de como o site funciona */
+.como-funciona {
   background-color: white;
   border: 1px solid #ffd6d6;
   border-radius: 10px;
   padding: 20px;
   text-align: center;
-  max-width: 600px;
-  margin: 0 auto 20px auto;
+  max-width: 700px;
+  margin: 0 auto 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.nutricin-page .como-funciona h2 {
+/* Título da seção */
+.como-funciona h2 {
   color: #e74c3c;
   margin-bottom: 10px;
 }
 
-.nutricin-page .como-funciona p {
-  margin-bottom: 10px;
-}
-
-.nutricin-page .dica {
+/* Dica de uso (com fundo rosado) */
+.dica {
   background-color: #ffe5e5;
   padding: 10px;
   border-radius: 5px;
   font-size: 13px;
+  margin-top: 10px;
 }
 
-/* ------------------------- */
-/* CAIXA DE INGREDIENTES     */
-/* ------------------------- */
-.nutricin-page .ingredientes-box {
+/* =============================== */
+/* SEÇÃO DE INGREDIENTES          */
+/* =============================== */
+
+/* Caixa principal dos ingredientes */
+.ingredientes-box {
   background-color: white;
   border: 1px solid #ffd6d6;
   border-radius: 10px;
   padding: 20px;
   text-align: center;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.nutricin-page .ingredientes-box h3 {
+/* Título "Seus ingredientes" */
+.ingredientes-box h3 {
   text-align: left;
   margin-bottom: 10px;
   font-size: 16px;
 }
 
-.nutricin-page .input-area {
+/* Área do input + botão "Adicionar" */
+.input-area {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* Responsivo em telas pequenas */
 }
 
-.nutricin-page .input-area input {
+/* Campo de texto para digitar ingredientes */
+.input-area input {
   flex: 1;
+  min-width: 240px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
 
-.nutricin-page .input-area button {
-  background-color: #32CD32;
+/* Botão "➕ Adicionar" */
+.input-area .add-btn {
+  background-color: #3bd332;
   color: white;
   border: none;
   border-radius: 6px;
-  padding: 10px 15px;
+  padding: 10px 16px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-.nutricin-page .btn-receita {
+/* Botão principal "Gerar Receita Inteligente" */
+.btn-receita {
   background-color: #3CB371;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 8px;
   font-weight: bold;
-  margin-top: 10px;
   cursor: pointer;
+  font-size: 15px;
 }
 
-.nutricin-page .msg {
-  font-size: 12px;
-  margin-top: 5px;
-  color: #888;
+/* Mensagem abaixo do botão */
+.msg {
+  font-size: 13px;
+  margin-top: 8px;
+  color: #777;
+}
+
+/* =============================== */
+/* RESPONSIVO PARA TELAS PEQUENAS */
+/* =============================== */
+
+@media (max-width: 600px) {
+  /* Coloca input e botão um abaixo do outro no celular */
+  .input-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-area input,
+  .input-area button {
+    width: 100%;
+  }
+
+  /* Empilha os botões principais em coluna */
+  .nav-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
