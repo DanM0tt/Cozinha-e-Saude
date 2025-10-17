@@ -3,27 +3,38 @@ import google.generativeai as gemini_ai
 import os # Biblioteca para acessar o arquivo .env
 from dotenv import load_dotenv # Importe load_dotenv
 
+# Importando a FastAPI - que ajuda na integração do frontend com o backend
+from fastapi import FastAPI
+from pydantic import BaseModel
+
 load_dotenv()  # Carrega as variáveis de ambiente do arquivo .env
 
 # A chamada da API
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 gemini_ai.configure(api_key=GEMINI_API_KEY)
-
-# A parte abaixo apenas printa os modelos (fica caso queiram mudar o modelo depois)
-#    modelos = gemini_ai.list_models()
-#    for model in modelos:
-#        if "generateContent" in model.supported_generation_methods:
-#            print(f"Nome do Modelo: {model.name}")
-#
 model = gemini_ai.GenerativeModel('gemini-2.5-flash') # o modelo escolhido / pode ser alterado
 
-# A estrutura de geração de resposta é a seguinte: resposta = model.generate_content( <prompt> )
-ingredientes_disponiveis = input("Digite os alimentos disponíveis: ")
-qnt_porcoes = int(input("Informe a quantidade de porções desejada: "))
-restricao = input("Informe quaisquer restrições alimentares que você tenha (ex: vegetariano, intolerante a lactose): ")
+# FastAPI
+app = FastAPI(
+    title="NutriCIn API",
+    description="Gera receitas personalizadas usando o modelo Gemini",
+    version="1.0.0"
+)
 
-prompt = f"Gere uma receita apenas com os ingredientes: {ingredientes_disponiveis}, fornecendo informações como quantidade, tempo de preparo e utensílios necessários para uma receita que sirva {qnt_porcoes} porções. Evite as seguintes restrições: {restricao}"
+class GerarReceita(BaseModel):
+    ingredientes: str
+    porcoes: int
+    restricao: str | None = None
 
 # Geração da receita
-resposta = model.generate_content(prompt)
-print(resposta.text) # Resposta em texto
+@app.post("/gerar_receita/")
+def gerar_receita(dados: GerarReceita):
+    prompt = (
+        f"Gere uma receita apenas com os ingredientes: {dados.ingredientes}, "
+        f"fornecendo informações como quantidade, tempo de preparo e utensílios necessários "
+        f"para uma receita que sirva {dados.porcoes} porções. "
+        f"Evite as seguintes restrições: {dados.restricao or 'nenhuma'}."
+    )
+
+    resposta = model.generate_content(prompt)
+    print(resposta.text) # Resposta em texto

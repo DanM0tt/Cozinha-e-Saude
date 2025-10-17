@@ -5,7 +5,7 @@ Para que o programa funcione, siga os seguintes passos:
 1. Clone o repositório localmente: 
 
     Copie o link do repositório da opção HTTPS; 
-
+    
     No terminal do VSCode, sem as aspas, digite 
     >*git clone "link do repositório"*
 
