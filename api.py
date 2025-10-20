@@ -1,35 +1,40 @@
-from google import genai
+# Bibliotecas importadas
+import google.generativeai as gemini_ai
+import os # Biblioteca para acessar o arquivo .env
+from dotenv import load_dotenv # Importe load_dotenv
+
+# Importando a FastAPI - que ajuda na integração do frontend com o backend
+from fastapi import FastAPI
 from pydantic import BaseModel
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
-api_key = os.getenv("API_KEY")
+load_dotenv()  # Carrega as variáveis de ambiente do arquivo .env
 
-class Receita(BaseModel):
-    nome_receita: str
-    ingredientes: list[str]
+# A chamada da API
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+gemini_ai.configure(api_key=GEMINI_API_KEY)
+model = gemini_ai.GenerativeModel('gemini-2.5-flash') # o modelo escolhido / pode ser alterado
 
-prompt = input("Quais ingredientes você possui para essa receita?")
-
-client = genai.Client(api_key = f"{api_key}")
-resposta = client.models.generate_content(
-    model="gemini-2.5-flash",
-    contents=f"Quero que você crie uma receita com os ingredientes que tenho disponível, sendo eles os seguintes {prompt}",
-    config={
-        "response_mime_type": "application/json",
-        "response_schema": list[Receita],
-    },
+# FastAPI
+app = FastAPI(
+    title="NutriCIn API",
+    description="Gera receitas personalizadas usando o modelo Gemini",
+    version="1.0.0"
 )
 
-minhas_receitas: list[Receita] = resposta.parsed
+class GerarReceita(BaseModel):
+    ingredientes: str
+    porcoes: int
+    restricao: str | None = None
 
-print()
+# Geração da receita
+@app.post("/gerar_receita/")
+def gerar_receita(dados: GerarReceita):
+    prompt = (
+        f"Gere uma receita apenas com os ingredientes: {dados.ingredientes}, "
+        f"fornecendo informações como quantidade, tempo de preparo e utensílios necessários "
+        f"para uma receita que sirva {dados.porcoes} porções. "
+        f"Evite as seguintes restrições: {dados.restricao or 'nenhuma'}."
+    )
 
-for receita in minhas_receitas:
-    print(f"{receita.nome_receita}:")
-
-    for ingred in receita.ingredientes:
-        print(f"\t- {ingred}")
-
-    print()
+    resposta = model.generate_content(prompt)
+    print(resposta.text) # Resposta em texto

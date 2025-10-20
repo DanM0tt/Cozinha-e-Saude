@@ -1,7 +1,26 @@
 # Cozinha_e_Saúde
-Projeto DS - 2025.2 - CIn
+Projeto NutriCIn - 2025.2 - CIn
 
-Para que o programa funcione, clone o repositório localmente, crie um arquivo .env, crie a variável API_KEY e coloque a sua key da api do Gemini.
+Para que o programa funcione, siga os seguintes passos:
+1. Clone o repositório localmente: 
 
-Ex.:
->API_KEY = "sua key"
+    Copie o link do repositório da opção HTTPS; 
+    
+    No terminal do VSCode, sem as aspas, digite 
+    >*git clone "link do repositório"*
+
+2. Crie sua chave API do Gemini:
+
+    As instruções estão no link: https://ai.google.dev/gemini-api/docs/quickstart?hl=pt-br.
+
+3. Crie um arquivo, na mesma pasta do git clonado:
+
+    Ele deve se chamar exatamente *.env*;
+    
+    Crie a variável GEMINI_API_KEY e coloque a sua key da API do Gemini.
+    
+    Não adicione aspas nem espaços!
+
+    Ex.:
+    >GEMINI_API_KEY="sua key"
+
