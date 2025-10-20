@@ -19,7 +19,8 @@ html, body {
 
 /* Área verde superior com título e subtítulo */
 .top-bar {
-  background-color: #61bb3e;
+  background-color: #61bb3e
+  ;
   color: white;
   text-align: center;
   padding: 20px 10px;
