@@ -24,3 +24,7 @@ Para que o programa funcione, siga os seguintes passos:
     Ex.:
     >GEMINI_API_KEY="sua key"
 
+4. Baixe as bibliotecas a seguir no terminal do VSCode utilizando o seguinte comando:
+    > pip install pydantic google-generativeai python-dotenv fastapi
+
+5. 
