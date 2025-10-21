@@ -89,7 +89,7 @@ git clone https://github.com/DanM0tt/Cozinha-e-Saude.git
 
 </aside>
 
-1. Instale as bibliotecas necessárias
+2. Instale as bibliotecas necessárias
 
 <aside>
 
@@ -97,7 +97,7 @@ pip install pydantic google-generativeai python-dotenv fastapi
 
 </aside>
 
-1. Execute o projeto
+3. Execute o projeto
 
 <aside>
 
