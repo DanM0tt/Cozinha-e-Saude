@@ -93,7 +93,7 @@ git clone https://github.com/DanM0tt/Cozinha-e-Saude.git
 
 <aside>
 
-pip install pydantic google-genai python-dotenv fastapi
+pip install pydantic google-generativeai python-dotenv fastapi
 
 </aside>
 
