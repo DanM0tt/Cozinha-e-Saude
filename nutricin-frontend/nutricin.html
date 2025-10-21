@@ -35,14 +35,23 @@
       <h3>🔵 Seus Ingredientes</h3>
 
       <div class="input-area">
-        <input type="text" placeholder="Digite um ingrediente (ex: tomate, frango, arroz...)" />
-        <button class="add-btn">➕ Adicionar</button>
+        <input type="text" id="ingrediente-input" placeholder="Digite um ingrediente (ex: tomate, frango, arroz...)" />
+        <button id="add-btn" class="add-btn">➕ Adicionar</button>
+        <ul id="lista-ingredientes"></ul>
       </div>
 
-      <button class="btn-receita">🤖 Gerar Receita Inteligente</button>
+      <input type="number" id="porcoes" placeholder="Porções (ex: 2)" />
+      <input type="text" id="restricao" placeholder="Restrições (opcional)" />
+
+      <button id="btn-receita" class="btn-receita">🤖 Gerar Receita Inteligente</button>
+
+      <div id="resultado"></div>
+
       <p class="msg">Adicione pelo menos 2 ingredientes para começar</p>
     </section>
   </main>
+
+<script src="script.js"></script>
 
 </body>
 </html>
