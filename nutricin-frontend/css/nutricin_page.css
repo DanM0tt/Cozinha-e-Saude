@@ -176,7 +176,29 @@ html, body {
   margin-top: 8px;
   color: #777;
 }
+.receita-markdown {
+  background: #fffdf8;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
 
+.receita-markdown h1,
+.receita-markdown h2 {
+  color: #3CB371;
+  margin-top: 1em;
+}
+
+.receita-markdown ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+#resultado {
+  margin-top: 20px;
+}
 /* =============================== */
 /* RESPONSIVO PARA TELAS PEQUENAS */
 /* =============================== */
