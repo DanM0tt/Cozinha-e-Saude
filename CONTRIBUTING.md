@@ -99,6 +99,15 @@ pip install pydantic google-generativeai python-dotenv fastapi
 
 1. Execute o projeto
 
+<aside>
+
+1. Baixe o uvicorn -> pip install uvicorn
+2. Rode o comando uvicorn api:app
+3. Copie o link http://127.0.0.1:8000/ no seu navegador
+4. Abra o arquivo `nutricin.html`
+
+</aside>
+
 # Código de conduta
 
 Mantenha um ambiente respeitoso, colaborativo e aberto a sugestões.

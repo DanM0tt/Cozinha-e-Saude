@@ -17,14 +17,14 @@ Para que o programa funcione, siga os seguintes passos:
 
     Ele deve se chamar exatamente *.env*;
     
-    Crie a variável GEMINI_API_KEY e coloque a sua key da API do Gemini.
+    Crie a variável GOOGLE_API_KEY e coloque a sua key da API do Gemini.
     
     Não adicione aspas nem espaços!
 
     Ex.:
-    >GEMINI_API_KEY="sua key"
+    >GOOGLE_API_KEY="sua key"
 
 4. Baixe as bibliotecas a seguir no terminal do VSCode utilizando o seguinte comando:
-    > pip install pydantic google-generativeai python-dotenv fastapi
+    > pip install pydantic google-generativeai python-dotenv fastapi 
 
 5. 

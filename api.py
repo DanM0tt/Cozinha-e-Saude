@@ -2,7 +2,6 @@
 import google.generativeai as gemini_ai
 import os # Biblioteca para acessar o arquivo .env
 from dotenv import load_dotenv # Importe load_dotenv
-import json
 
 # Importando a FastAPI - que ajuda na integração do frontend com o backend
 from fastapi import FastAPI
