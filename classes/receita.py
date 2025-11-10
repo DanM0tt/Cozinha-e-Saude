@@ -20,4 +20,4 @@ class Receita(BaseModel):
         Evite as restrições: {self.restricao or 'nenhuma'}.
         Não envie a mensagem "com certeza" por favor!
         """
-        return model.generate_content(prompt) 
+        return model.generate_content(prompt), prompt
