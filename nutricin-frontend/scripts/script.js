@@ -40,9 +40,9 @@ btnGerar.addEventListener("click", async () => {
 
     if (!response.ok) throw new Error("Erro na requisição");
 
-    // ✅ Captura texto puro da resposta
-    const texto = await response.text();
-
+    // ✅ Captura texto puro da resposta 
+    const texto = await response.json();
+    console.log(texto);
     // ✅ Converte Markdown em HTML formatado
     const htmlFormatado = marked.parse(texto);
 
