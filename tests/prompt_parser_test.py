@@ -1,5 +1,4 @@
 from funcoes.prompt_parser import promptParser
-import pytest
 
 def test_prompt_parser_com_texto():
     # Resposta tem atributo .text não vazio -> retorna texto limpo

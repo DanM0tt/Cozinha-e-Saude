@@ -1,0 +1,21 @@
+# Framework principal da API
+fastapi==0.115.0
+
+# Servidor ASGI para rodar a API
+uvicorn[standard]==0.32.0
+
+# Validação de dados com Pydantic
+pydantic==2.9.2
+pydantic-core==2.23.4
+
+# Integração com o Gemini (Google Generative AI)
+google-generativeai==0.8.3
+
+# Carregar variáveis de ambiente (.env)
+python-dotenv==1.0.1
+
+# Templates HTML (usados com Jinja2Templates)
+jinja2==3.1.4
+
+# Testes unitários (funções locais)
+pytest==9.0.0
