@@ -41,7 +41,7 @@ async def renderizar_html(request: Request):
         request=request,
         name="nutricin.html"
     )
-
+ 
 @app.post("/gerar_receita/")
 async def promptDaReceita(receita: Receita):
     
