@@ -27,6 +27,8 @@ app = FastAPI(
 # Aplicação do template Jinja2 para renderização local do projeto
 app.mount('/scripts', StaticFiles(directory='nutricin-frontend/scripts'))
 app.mount('/css', StaticFiles(directory='nutricin-frontend/css'))
+app.mount('/img', StaticFiles(directory='nutricin-frontend/img'))
+
 templates = Jinja2Templates(directory="nutricin-frontend")
 
 # Aceitando requisições de outros domínios para realizar a integração com o front-end
