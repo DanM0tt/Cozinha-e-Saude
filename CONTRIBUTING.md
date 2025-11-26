@@ -93,7 +93,7 @@ git clone https://github.com/DanM0tt/Cozinha-e-Saude.git
 
 <aside>
 
-pip install pydantic google-generativeai python-dotenv fastapi
+pip install -r requirements.txt
 
 </aside>
 
@@ -101,10 +101,8 @@ pip install pydantic google-generativeai python-dotenv fastapi
 
 <aside>
 
-1. Baixe o uvicorn -> pip install uvicorn
-2. Rode o comando uvicorn api:app
-3. Copie o link http://127.0.0.1:8000/ no seu navegador
-4. Abra o arquivo `nutricin.html`
+   Rode o comando uvicorn index:app --reload ou python -m uvicorn index:app --reload
+   Abra o link http://127.0.0.1:8000/ no seu navegador
 
 </aside>
 
