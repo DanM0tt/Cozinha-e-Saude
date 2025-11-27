@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS usuarios (
+    username     VARCHAR(50),
+    email        VARCHAR(255) UNIQUE NOT NULL,
+    id           INT PRIMARY KEY,
+    senha        VARCHAR(192),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE usuarios
+ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
