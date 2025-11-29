@@ -1,41 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/login_register.css" >
-  <title>login page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - NutriCIn</title>
+  <link rel="stylesheet" href="css/loginpage.css">
 </head>
 <body>
-  <header class="header">
-    <img src="img/imagem2.png" alt="" height="80%" width="auto">
-  </header>
-  <main>
-      
 
-      <div class="login-container">
+<main class="page">
+
+  <section class="content-area">
+
+    <div class="left-column">
+
+      <div class="logo-wrapper">
+        <img src="img/imagem2.png" alt="Logo NutriCin" class="logo">
+      </div>
+
+      <section class="login-card">
         <h2>LOGIN</h2>
-        <form class="login-form">
-          <div class="input-group">
-            <label for="username">Usuário:</label>
-            <input placeholder="Seu nome de usuário ou seu email" type="text" id="username" name="username" required>
-          </div>
 
-          <div class="input-group">
-            <label for="password">Senha:</label>
-            <input placeholder="Sua senha" type="password" id="password" name="password" required>
-          </div>
+        <input type="text" placeholder="Digite seu e-mail ou usuário">
+        <input type="password" placeholder="Digite sua senha">
 
-          <button type="submit" class="submit-btn">Entrar</button>
-        </form>
-        <a class="aviso">Esqueceu a senha?</a>
-        <h3 id="create-accont">Não tem uma conta??</h3>
-        <button type="button" class="create-accont">Criar conta</button>
-      </div>
-      <div class="container_img"> 
-        <img src="img/imagem1.2.png" alt="" width="100%"">
-      </div>
-      
-  </main>
+        <button class="btn entrar">ENTRAR</button>
+        <button class="btn cadastrar">CADASTRAR</button>
+      </section>
+
+    </div>
+
+    <div class="right-column">
+      <img src="img/imagem1.2.png" alt="Ilustração" class="art">
+    </div>
+
+  </section>
+
+</main>
+
 </body>
 </html>
