@@ -38,7 +38,7 @@ async def cadastrarUsuario(usuario: UserCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(instancia_usuario)
     
-@api_router.get("/receita")
+@api_router.post("/receita")
 async def promptDaReceita(receita: Receita):
     
     resposta, prompt = receita.gerar()

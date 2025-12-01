@@ -7,7 +7,7 @@ login_form.addEventListener("submit", async (event) => {
     const senha = event.target.password.value;
     console.log(email_ou_usuario)
     console.log(senha)
-    const request = await fetch("/api/usuarios", {
+    const request = await fetch("/api/sessao", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',

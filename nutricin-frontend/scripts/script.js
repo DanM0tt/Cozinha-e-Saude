@@ -28,7 +28,7 @@ btnGerar.addEventListener("click", async () => {
   resultadoDiv.innerHTML = "<p>⏳ Gerando receita...</p>";
 
   try {
-    const response = await fetch("http://127.0.0.1:8000/gerar_receita/", {
+    const response = await fetch("/api/receita", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
