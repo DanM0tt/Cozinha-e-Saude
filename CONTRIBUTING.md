@@ -97,12 +97,15 @@ pip install -r requirements.txt
 
 </aside>
 
-3. Execute o projeto
+3. Execute o projeto:
 
 <aside>
 
-1. Rode o comando uvicorn api:app ou python -m uvicorn app:api
-2. Abra o link http://127.0.0.1:8000/ no seu navegador
+
+   Rode o comando uvicorn index:app --reload ou python -m uvicorn index:app --reload
+   Abra o link http://127.0.0.1:8000/ no seu navegador
+
+
 
 </aside>
 
