@@ -1,14 +1,8 @@
-historico = []
+from funcoes.prompt_parser import promptParser
 
-def registrarChamada(prompt, resposta):
-    if hasattr(resposta, "text"): 
-        resp = resposta.text 
-    elif hasattr(resposta, "candidates"):
-        resp = resposta.candidates[0].content.parts[0].text.strip()
-    else: 
-        resp = None
-
+def registrarChamada(historico, prompt, resposta):
+    
     historico.append({
         "prompt": prompt,
-        "resposta": resp
+        "resposta": promptParser(resposta)
     })

@@ -1,6 +1,7 @@
-from funcoes.registrar_chamada import registrarChamada, historico
+from funcoes.registrar_chamada import registrarChamada
 
-def test_registrar_chamada_com_text():
+
+def test_registrar_chamada_com_text(historico=[]):
     # Limpa histórico antes do teste
     historico.clear()
 
@@ -11,14 +12,14 @@ def test_registrar_chamada_com_text():
     prompt = "Gere uma receita x"
     resposta = TesteResposta()
 
-    registrarChamada(prompt, resposta)
+    registrarChamada(historico, prompt, resposta)
 
     assert len(historico) == 1
     assert historico[0]["prompt"] == prompt
     assert historico[0]["resposta"] == "Receita simulada"
 
 
-def test_registrar_chamada_sem_text():
+def test_registrar_chamada_sem_text(historico=[]):
     historico.clear()
 
     class TesteResposta:
@@ -27,8 +28,8 @@ def test_registrar_chamada_sem_text():
     prompt = "Gere uma receita x"
     resposta = TesteResposta()
 
-    registrarChamada(prompt, resposta)
+    registrarChamada(historico, prompt, resposta)
 
     assert len(historico) == 1
     assert historico[0]["prompt"] == prompt
-    assert historico[0]["resposta"] is None
+    assert historico[0]["resposta"] == "Não foi possível obter resposta do modelo."
