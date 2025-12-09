@@ -1,8 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import Column, Integer, String, TIMESTAMP, Boolean, text
+from sqlalchemy import Column, Integer, String, TIMESTAMP, Boolean, text, Date
 from dotenv import load_dotenv
+
 import os 
 load_dotenv()
 DB_URL = os.getenv("DB_URL")
@@ -18,4 +19,5 @@ class UsuarioDB(Base):
     email = Column(String, nullable=False)
     senha = Column(String, nullable=False)
     created_at = Column(TIMESTAMP(timezone=True), server_default=text('now()'))
-    
+    birthday = Column(Date)
+    gender = Column(String)

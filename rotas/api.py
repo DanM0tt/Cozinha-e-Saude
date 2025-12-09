@@ -9,7 +9,7 @@ from funcoes.prompt_parser import promptParser
 from classes.usuario import UserLogin, UserCreate
 from classes.banco_de_dados import UsuarioDB
 from classes.receita import Receita
-
+from datetime import date
 api_router = APIRouter(prefix='/api')
 
 @api_router.post('/sessao')
@@ -32,8 +32,11 @@ async def cadastrarUsuario(usuario: UserCreate, db: Session = Depends(get_db)):
     instancia_usuario = UsuarioDB(
         username=usuario.username,
         email=usuario.email,
-        senha=senha_hash
+        senha=senha_hash,
+        birthday=usuario.birthday,
+        gender=usuario.gender    
     )
+
     db.add(instancia_usuario)
     db.commit()
     db.refresh(instancia_usuario)

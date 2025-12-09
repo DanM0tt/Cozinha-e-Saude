@@ -16,20 +16,20 @@
     <section class="card-cadastro">
       <h2>CADASTRO</h2>
 
-      <form>
+      <form id="form-cadastro">
         <div class="grid-duas-colunas">
           
           <div class="coluna">
-            <input type="email" placeholder="Endereço de e-mail" class="input-padrao">
-            <input type="password" placeholder="Senha" class="input-padrao" autocomplete="new-password">
-            <input type="password" placeholder="Confirme sua senha" class="input-padrao" autocomplete="new-password">
+            <input type="email" name="email" placeholder="Endereço de e-mail" class="input-padrao">
+            <input type="password" name="senha" placeholder="Senha" class="input-padrao" autocomplete="new-password">
+            <input type="password" name="confirmacao_senha" placeholder="Confirme sua senha" class="input-padrao" autocomplete="new-password">
           </div>
 
           <div class="coluna">
-            <input type="text" placeholder="Nome de usuário" class="input-padrao">
+            <input type="text" name="nome_usuario" placeholder="Nome de usuário" class="input-padrao">
             
             <div class="select-wrapper">
-              <select class="input-padrao select-genero">
+              <select id="genero-escolha" class="input-padrao select-genero">
                 <option value="" disabled selected>Gênero</option>
                 <option value="masculino">Masculino</option>
                 <option value="feminino">Feminino</option>
@@ -40,16 +40,17 @@
             <div class="area-data">
               <label>Data de nascimento</label>
               <div class="bolinhas-data">
-                <input type="number" placeholder="Dia" class="input-bola">
-                <input type="number" placeholder="Mês" class="input-bola">
-                <input type="number" placeholder="Ano" class="input-bola">
+                <input name="dia" type="number" placeholder="Dia" class="input-bola">
+                <input name="mes" type="number" placeholder="Mês" class="input-bola">
+                <input name="ano" type="number" placeholder="Ano" class="input-bola">
               </div>
             </div>
 
           </div> </div> <button type="submit" class="btn-cadastrar">CADASTRAR</button>
-          
+
       </form>
     </section>
+    <script src="/scripts/cadastro.js"></script>
   </main>
 
 </body>

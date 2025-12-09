@@ -1,3 +1,7 @@
+const href_cadastro = document.getElementById("botao-href-cadastro");
+
+href_cadastro.addEventListener("click", () => window.location.href = '/cadastro');
+
 const login_form = document.getElementById("login-form1");
 // vou adicionar error checking dps aqui..
 

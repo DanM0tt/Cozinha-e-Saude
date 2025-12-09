@@ -39,5 +39,9 @@ async def renderizar_pagina_principal(request: Request):
         name="nutricin.html"
     )
     
-
-    
+@app.get('/cadastro', response_class=HTMLResponse)
+async def renderizar_pagina_cadastro(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="cadastro.html"
+    )
