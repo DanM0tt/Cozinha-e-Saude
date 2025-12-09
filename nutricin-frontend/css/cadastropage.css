@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* FUNDO GERAL (VERDE ESCURO) */
+body {
+  background-color: #0d260d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+
+
+.header-logo {
+  margin-bottom: 80px;
+}
+
+.logo-img {
+  width: 150px;
+  display: block;
+  transform: translateX(-50px);
+}
+
+
+.card-cadastro {
+  background-color: #4a8c33;
+  margin-top: 0;
+  padding: 80px 120px; 
+  
+  border-radius: 40px;
+  width: 1100px;
+  max-width: 90%;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  text-align: center;
+  
+
+  margin-top: 10px; 
+}
+
+
+.input-padrao, .select-genero {
+  padding: 18px; /* Mais gordinho */
+  font-size: 1.1rem; /* Letra maior */
+  border-radius: 50px;
+}
+
+
+.grid-duas-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 40px;
+  align-items: start;
+}
+.card-cadastro h2 {
+  color: white;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.coluna {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.input-padrao {
+  width: 100%;
+  padding: 15px;
+  border-radius: 50px;
+  border: none;
+  background-color: #f1f1f1;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  color: #333;
+}
+
+/* AJUSTE DO SELECT (GÊNERO) */
+.select-wrapper {
+  position: relative;
+}
+.select-genero {
+  appearance: none;
+  cursor: pointer;
+  color: #333;
+}
+/* Setinha manual */
+.select-wrapper::after {
+  content: '▼';
+  font-size: 0.8rem;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* (AS 3 BOLINHAS) */
+.area-data {
+  text-align: center;
+}
+
+.area-data label {
+  color: white;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.bolinhas-data {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input-bola {
+  width: 70px;
+  height: 70px; 
+  font-size: 1rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #f1f1f1;
+  text-align: center;
+  outline: none;
+}
+
+
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none; 
+}
+
+/* BOTÃO CADASTRAR */
+.btn-cadastrar {
+  background-color: #102110;
+  color: white;
+  font-weight: bold;
+  padding: 12px 60px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.btn-cadastrar:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 700px) {
+  .grid-duas-colunas {
+    flex-direction: column;
+  }
+}

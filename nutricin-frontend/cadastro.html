@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriCIn - Cadastro</title>
+  <link rel="stylesheet" href="css/cadastropage.css">
+</head>
+<body>
+
+  <div class="header-logo">
+    <img src="img/imagem2.png" alt="NutriCIn Logo" class="logo-img">
+  </div>
+
+  <main class="container-principal">
+    <section class="card-cadastro">
+      <h2>CADASTRO</h2>
+
+      <form>
+        <div class="grid-duas-colunas">
+          
+          <div class="coluna">
+            <input type="email" placeholder="Endereço de e-mail" class="input-padrao">
+            <input type="password" placeholder="Senha" class="input-padrao">
+            <input type="password" placeholder="Confirme sua senha" class="input-padrao">
+          </div>
+
+          <div class="coluna">
+            <input type="text" placeholder="Nome de usuário" class="input-padrao">
+            
+            <div class="select-wrapper">
+              <select class="input-padrao select-genero">
+                <option value="" disabled selected>Gênero</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+
+            <div class="area-data">
+              <label>Data de nascimento</label>
+              <div class="bolinhas-data">
+                <input type="number" placeholder="Dia" class="input-bola">
+                <input type="number" placeholder="Mês" class="input-bola">
+                <input type="number" placeholder="Ano" class="input-bola">
+              </div>
+            </div>
+
+          </div> </div> <button type="submit" class="btn-cadastrar">CADASTRAR</button>
+
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>
