@@ -3,7 +3,7 @@ const login_form = document.getElementById("login-form1");
 
 login_form.addEventListener("submit", async (event) => {
     event.preventDefault()
-    const email_ou_usuario = event.target.username.value;
+    const email_ou_usuario = event.target.email.value;
     const senha = event.target.password.value;
     console.log(email_ou_usuario)
     console.log(senha)
@@ -18,7 +18,7 @@ login_form.addEventListener("submit", async (event) => {
         })
     });
 
-    if (request.status > 299) {
+    if (request.status > 399) {
         window.location.href = "/"
         return new Error("Algo deu errado durante o login: " + request.status);
     };

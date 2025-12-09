@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #082d0f;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 20px;
+  color: white;
+}
+
+/* CONTAINER GERAL */
+.page {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ESTRUTURA PRINCIPAL */
+.content-area {
+  display: flex;
+  align-items: center;
+  gap: 140px;
+  padding-left: 40px;
+}
+
+/* COLUNA ESQUERDA */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+/* LOGO */
+.logo-wrapper {
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 230px;
+}
+
+/* CARD LOGIN */
+.login-card {
+  width: 400px;
+  padding: 75px 30px;   
+  background: #2b8b2f;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* TÍTULO */
+.login-card h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* INPUTS */
+.login-card input {
+  width: 100%;
+  height: 48px;
+  border-radius: 25px;
+  border: none;
+  padding-left: 18px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  outline: none;
+}
+
+/* BOTÕES */
+.btn {
+  width: 80%;
+  height: 32px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #0c3f11;
+  color: white;
+}
+
+/* ENTRAR */
+.entrar {
+  margin-top: 8px;
+  margin-left: 25px;
+}
+
+/* CADASTRAR */
+.cadastrar {
+  margin-top: 22px;
+  margin-left: 25px;
+  font-size: 13px;
+}
+
+/* ILUSTRAÇÃO */
+.right-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.art {
+  width: 100%;   
+  transform: translateX(60px) translateY(40px);
+}
+
+/* RESPONSIVO */
+@media (max-width: 1000px) {
+  .content-area {
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 0;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .login-card {
+    width: 320px;
+    padding: 60px 20px;
+  }
+
+  .art {
+    width: 280px;
+    transform: translateX(0);
+  }
+}
