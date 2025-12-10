@@ -45,7 +45,5 @@ async def cadastrarUsuario(usuario: UserCreate, db: Session = Depends(get_db)):
 async def promptDaReceita(receita: Receita):
     
     resposta, prompt = receita.gerar()
-    registrarChamada(prompt, resposta)
-
     # Garante que captura o texto do Gemini corretamente
     return promptParser(resposta)
