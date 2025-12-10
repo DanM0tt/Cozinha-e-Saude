@@ -28,5 +28,3 @@ pwdlib[argon2]==25.1.0
 
 # SQLAlchemy para implementação de ORM
 sqlalchemy==2.0.44
-
-pip install -r requirements.txt
