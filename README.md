@@ -25,5 +25,5 @@ Para que o programa funcione, siga os seguintes passos:
     >GOOGLE_API_KEY="sua key"
 
 4. Baixe as bibliotecas a seguir no terminal do VSCode utilizando o seguinte comando:
-    > pip install pydantic google-generativeai python-dotenv fastapi 
+    > pip install -r requirements.txt
 
