@@ -50,7 +50,6 @@ btnGerar.addEventListener("click", async () => {
 
     // ✅ Captura texto puro da resposta 
     const data = await response.json();
-    console.log(texto);
     // ✅ Converte Markdown em HTML formatado
     const htmlFormatado = marked.parse(data.resposta);
 

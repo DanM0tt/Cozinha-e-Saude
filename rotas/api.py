@@ -47,7 +47,7 @@ async def promptDaReceita(
     db: Session = Depends(get_db)
 ):
     resposta, prompt = receita.gerar()
-
+    
     receita_db = registrarChamada(
         db=db,
         user_id=receita.user_id,  # 👈 vem do frontend
