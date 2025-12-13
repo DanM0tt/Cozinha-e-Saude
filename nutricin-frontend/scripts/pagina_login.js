@@ -26,5 +26,11 @@ login_form.addEventListener("submit", async (event) => {
         window.location.href = "/"
         return new Error("Algo deu errado durante o login: " + request.status);
     };
+
+    const data = await request.json();
+
+    localStorage.setItem("user_id", data.user_id);
+    localStorage.setItem("nome_usuario", data.nome_usuario);
+    
     window.location.href = "/receita";
 });

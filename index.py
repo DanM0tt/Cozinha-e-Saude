@@ -45,3 +45,10 @@ async def renderizar_pagina_cadastro(request: Request):
         request=request,
         name="cadastro.html"
     )
+
+@app.get('/historico', response_class=HTMLResponse)
+async def renderizar_pagina_historico(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="historico.html"
+    )
