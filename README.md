@@ -62,4 +62,5 @@ Para realizar o deploy na plataforma Render, siga estas configurações:
     Adicione no painel do Render, aba "Environment":
 
     >GOOGLE_API_KEY="sua key"
+    
     >DB_URL="seu url"
