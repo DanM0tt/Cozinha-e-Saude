@@ -12,6 +12,7 @@ class Receita(BaseModel):
     ingredientes: str
     porcoes: int
     restricao: str | None = None
+    user_id: int
     
     def gerar(self):
         prompt = f"""

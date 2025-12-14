@@ -24,6 +24,13 @@ btnGerar.addEventListener("click", async () => {
 
   const porcoes = document.getElementById("porcoes").value || 2;
   const restricao = document.getElementById("restricao").value;
+  const user_id = parseInt(localStorage.getItem("user_id"));
+
+  if (!user_id) {
+    alert("Usuário não autenticado");
+    window.location.href = "/";
+    return;
+  }
 
   resultadoDiv.innerHTML = "<p>⏳ Gerando receita...</p>";
 
@@ -35,16 +42,16 @@ btnGerar.addEventListener("click", async () => {
         ingredientes: ingredientes.join(", "),
         porcoes: parseInt(porcoes),
         restricao: restricao || null,
+        user_id: user_id,
       }),
     });
 
     if (!response.ok) throw new Error("Erro na requisição");
 
     // ✅ Captura texto puro da resposta 
-    const texto = await response.json();
-    console.log(texto);
+    const data = await response.json();
     // ✅ Converte Markdown em HTML formatado
-    const htmlFormatado = marked.parse(texto);
+    const htmlFormatado = marked.parse(data.resposta);
 
     // ✅ Mostra no resultado com um estilo bonito
     resultadoDiv.innerHTML = `

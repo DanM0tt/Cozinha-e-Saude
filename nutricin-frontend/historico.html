@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriCin - Histórico</title>
+  <link rel="stylesheet" href="css/nutricin_page.css" />
+</head>
+<body>
+
+  <!-- CABEÇALHO VERDE -->
+  <header class="top-bar">
+    <h1>NutriCIn</h1>
+    <p>Suas últimas receitas geradas</p>
+  </header>
+
+  <!-- BOTÕES -->
+  <div class="nav-buttons">
+    <button class="green" onclick="location.href='/receita'">🍳 Gerar Receita</button>
+    <button class="orange">📜 Histórico</button>
+  </div>
+
+  <main>
+
+    <!-- HISTÓRICO -->
+    <section class="ingredientes-box">
+      <h3>📜 Últimas 3 receitas</h3>
+
+      <div id="historico-container">
+        <!-- Receitas serão inseridas aqui via JS -->
+      </div>
+
+      <p class="msg">Mostrando apenas as 3 receitas mais recentes</p>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="/scripts/historico.js"></script>
+</body>
+</html>

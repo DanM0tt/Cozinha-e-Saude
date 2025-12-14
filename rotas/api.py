@@ -7,7 +7,7 @@ from funcoes.registrar_chamada import registrarChamada
 from funcoes.prompt_parser import promptParser
 
 from classes.usuario import UserLogin, UserCreate
-from classes.banco_de_dados import UsuarioDB
+from classes.banco_de_dados import UsuarioDB, ReceitaDB
 from classes.receita import Receita
 from datetime import date
 api_router = APIRouter(prefix='/api')
@@ -42,8 +42,43 @@ async def cadastrarUsuario(usuario: UserCreate, db: Session = Depends(get_db)):
     db.refresh(instancia_usuario)
     
 @api_router.post("/receita")
-async def promptDaReceita(receita: Receita):
-    
+async def promptDaReceita(
+    receita: Receita,
+    db: Session = Depends(get_db)
+):
     resposta, prompt = receita.gerar()
-    # Garante que captura o texto do Gemini corretamente
-    return promptParser(resposta)
+    
+    receita_db = registrarChamada(
+        db=db,
+        user_id=receita.user_id,  # 👈 vem do frontend
+        prompt=prompt,
+        resposta=resposta
+    )
+
+    return {
+        "id": receita_db.id,
+        "resposta": receita_db.resposta
+    }
+
+@api_router.get("/receitas/ultimas/{user_id}")
+async def ultimas_receitas(
+    user_id: int,
+    db: Session = Depends(get_db)
+):
+    receitas = (
+        db.query(ReceitaDB)
+        .filter(ReceitaDB.user_id == user_id)
+        .order_by(ReceitaDB.created_at.desc())
+        .limit(3)
+        .all()
+    )
+
+    return [
+        {
+            "id": r.id,
+            "prompt": r.prompt,
+            "resposta": r.resposta,
+            "created_at": r.created_at
+        }
+        for r in receitas
+    ]
