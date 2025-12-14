@@ -33,6 +33,7 @@ Para que o programa funcione, siga os seguintes passos:
 
     Ex.:
     >GOOGLE_API_KEY="sua key"
+    
     >DB_URL="seu url"
 
 5. Instale as Dependências do projeto no terminal do VSCode:
