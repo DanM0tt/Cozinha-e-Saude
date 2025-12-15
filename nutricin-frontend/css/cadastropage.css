@@ -47,8 +47,8 @@ body {
 
 
 .input-padrao, .select-genero {
-  padding: 18px; /* Mais gordinho */
-  font-size: 1.1rem; /* Letra maior */
+  padding: 18px; 
+  font-size: 1.1rem; 
   border-radius: 50px;
 }
 
@@ -110,7 +110,7 @@ body {
   pointer-events: none;
 }
 
-/* (AS 3 BOLINHAS) */
+
 .area-data {
   text-align: center;
 }

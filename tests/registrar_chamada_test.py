@@ -1,35 +1,47 @@
+from unittest.mock import MagicMock, patch
+from sqlalchemy.orm import Session
+
+from funcoes.prompt_parser import promptParser
 from funcoes.registrar_chamada import registrarChamada
+from classes.banco_de_dados import ReceitaDB
 
 
-def test_registrar_chamada_com_text(historico=[]):
-    # Limpa histórico antes do teste
-    historico.clear()
+def test_registrar_chamada_sucesso():
+    # mock da sessão do banco
+    db = MagicMock(spec=Session)
 
-    # Cria uma resposta simulada com atributo .text
-    class TesteResposta:
-        text = "Receita simulada"
-
+    user_id = 1
     prompt = "Gere uma receita x"
-    resposta = TesteResposta()
+    resposta = "resposta simulada"
 
-    registrarChamada(historico, prompt, resposta)
+    # mock do promptParser
+    with patch("funcoes.registrar_chamada.promptParser") as mock_parser:
+        mock_parser.return_value = "Receita simulada"
 
-    assert len(historico) == 1
-    assert historico[0]["prompt"] == prompt
-    assert historico[0]["resposta"] == "Receita simulada"
+        nova_receita = registrarChamada(
+            db=db,
+            user_id=user_id,
+            prompt=prompt,
+            resposta=resposta
+        )
+
+    # Verificações
+    db.add.assert_called_once()
+    db.commit.assert_called_once()
+    db.refresh.assert_called_once()
+
+    assert isinstance(nova_receita, ReceitaDB)
+    assert nova_receita.user_id == user_id
+    assert nova_receita.prompt == prompt
+    assert nova_receita.resposta == "Receita simulada"
 
 
-def test_registrar_chamada_sem_text(historico=[]):
-    historico.clear()
+def test_prompt_parser_sem_text():
+    class Resposta:
+        pass
 
-    class TesteResposta:
-        pass  # sem atributo .text
+    resposta = Resposta()
 
-    prompt = "Gere uma receita x"
-    resposta = TesteResposta()
+    resultado = promptParser(resposta)
 
-    registrarChamada(historico, prompt, resposta)
-
-    assert len(historico) == 1
-    assert historico[0]["prompt"] == prompt
-    assert historico[0]["resposta"] == "Não foi possível obter resposta do modelo."
+    assert resultado == "Não foi possível obter resposta do modelo."

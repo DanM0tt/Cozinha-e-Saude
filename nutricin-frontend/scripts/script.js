@@ -48,12 +48,10 @@ btnGerar.addEventListener("click", async () => {
 
     if (!response.ok) throw new Error("Erro na requisição");
 
-    // ✅ Captura texto puro da resposta 
     const data = await response.json();
-    // ✅ Converte Markdown em HTML formatado
+
     const htmlFormatado = marked.parse(data.resposta);
 
-    // ✅ Mostra no resultado com um estilo bonito
     resultadoDiv.innerHTML = `
       <h2>🍽️ Receita Gerada</h2>
       <div class="receita-markdown">${htmlFormatado}</div>

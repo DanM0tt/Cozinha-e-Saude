@@ -1,8 +1,8 @@
 from pydantic import BaseModel
 from pwdlib import PasswordHash
 from datetime import date
-# criei uma classe pra cada situação no banco de dados
-#
+
+
 class UserCreate(BaseModel):
     email: str
     username: str
