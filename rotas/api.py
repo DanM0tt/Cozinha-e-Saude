@@ -50,7 +50,7 @@ async def promptDaReceita(
     
     receita_db = registrarChamada(
         db=db,
-        user_id=receita.user_id,  # 👈 vem do frontend
+        user_id=receita.user_id,
         prompt=prompt,
         resposta=resposta
     )
